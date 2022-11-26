@@ -28,6 +28,7 @@
 </head>
 
 <body>
+
     <div>
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
             <table>
@@ -47,6 +48,7 @@
                 </tr>
             </table>
         </form>
+
         <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
@@ -88,8 +90,10 @@
         }
         ?>
 
+
     </div>
 
 </body>
 
 </html>
+
