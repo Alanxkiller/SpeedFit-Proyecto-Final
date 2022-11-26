@@ -45,7 +45,9 @@
                 <tr>
                     <td colspan="2" style="text-align: center;"><input type="submit" value="Enviar"></td>
                 </tr>
+                
             </table>
+            <p>HOLA</p>
         </form>
         <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
