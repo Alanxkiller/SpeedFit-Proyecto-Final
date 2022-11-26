@@ -83,11 +83,8 @@
             $txt.='</td>';
         }
         $txt.='</table>';
-        echo $txt;
-                
-        $promedio = $suma/$a;
- dev_avance3
-        
+        echo $txt;              
+        $promedio = $suma/$a;       
         echo "<br>";
         echo "<p>El número más chico es: ".$chico."</p>";
         echo "<br>";
@@ -95,8 +92,6 @@
         echo "<br>";
         echo "<p>El promedio es: ".$promedio."</p>";
         echo "<br><br>";
-=======
- main
         }
         ?>
 
