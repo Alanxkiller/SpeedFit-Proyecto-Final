@@ -122,6 +122,26 @@
         $txt.='<td>Shuffleados</td></table>';
         echo $txt;
         echo "<br>"; 
+                
+        shuffle($vec);        
+        $txt='<table border>';        
+        foreach($vec as $x){
+            $txt.='<td style="color:magenta;">'. $x .'</td>';
+            $txt.='</td>';
+        }              
+        $txt.='<td>Shuffle 2</td></table>';
+        echo $txt;
+        echo "<br>"; 
+                
+        shuffle($vec);        
+        $txt='<table border>';        
+        foreach($vec as $x){
+            $txt.='<td style="color:purple;">'. $x .'</td>';
+            $txt.='</td>';
+        }              
+        $txt.='<td>Shuffle 3</td></table>';
+        echo $txt;
+        echo "<br>"; 
         }
         ?>
 
