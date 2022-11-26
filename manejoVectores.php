@@ -28,6 +28,7 @@
 </head>
 
 <body>
+
     <div>
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
             <table>
@@ -85,6 +86,8 @@
         echo $txt;
                 
         $promedio = $suma/$a;
+
+
         
         echo "<br>";
         echo "<p>El número más chico es: ".$chico."</p>";
@@ -93,6 +96,7 @@
         echo "<br>";
         echo "<p>El promedio es: ".$promedio."</p>";
         echo "<br><br>";
+
         asort($vec);        
         $txt='<table border>';        
         foreach($vec as $x){
@@ -122,11 +126,14 @@
         $txt.='<td>Shuffleados</td></table>';
         echo $txt;
         echo "<br>"; 
+
         }
         ?>
+
 
     </div>
 
 </body>
 
 </html>
+
