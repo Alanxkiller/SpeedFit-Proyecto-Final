@@ -87,6 +87,16 @@
         echo $txt;
                 
         $promedio = $suma/$a;
+
+        
+        echo "<br>";
+        echo "<p>El número más chico es: ".$chico."</p>";
+        echo "<br>";
+        echo "<p>El número más grande es: ".$grande."</p>";
+        echo "<br>";
+        echo "<p>El promedio es: ".$promedio."</p>";
+        echo "<br><br>";
+
         }
         ?>
 
