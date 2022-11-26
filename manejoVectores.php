@@ -48,10 +48,52 @@
                 </tr>
             </table>
         </form>
+
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    
+            function vector($a,$min,$max){
+            for($x=0;$x<$a;$x++)
+                    $r[$x]=rand($min,$max);
+                return $r;
+            }
+                    
+        
+        $a = $_POST['a'];
+        $min = $_POST['min'];
+        $max = $_POST['max'];
+        $chico = $_POST['max'];
+        $grande = 0;
+        $promedio = 0;
+        $suma = 0;
+                
+        $vec=vector($a,$min,$max);//envia argumentos a funcion
+        //Los arrays en php es altamente recomendable recorrerlos
+        //con foreach
+                
+        $txt='<table border>';        
+        foreach($vec as $x){
+            if ($chico > $x){
+                $chico = $x;
+            }
+            if ($grande < $x){
+                $grande = $x;
+            }
+            $suma += $x;
+            $txt.='<td style="color:purple;">'. $x .'</td>';
+            $txt.='</td>';
+        }
+        $txt.='</table>';
+        echo $txt;
+                
+        $promedio = $suma/$a;
+        }
+        ?>
+
+
     </div>
 
 </body>
 
 </html>
-
 
