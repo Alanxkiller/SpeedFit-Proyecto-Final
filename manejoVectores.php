@@ -28,27 +28,7 @@
 </head>
 
 <body>
-    <div>
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-            <table>
-                <tr>
-                    <td>Tamaño del vector:</td>
-                    <td><input type="number" name="a" required></td>
-                </tr>
-                <tr>
-                    <td>Limite inferior:</td>
-                    <td><input type="number" name="min" required></td>
-                <tr>
-                <tr>
-                    <td>Limite superior:</td>
-                    <td><input type="number" name="max" required></td>
-                <tr>
-                    <td colspan="2" style="text-align: center;"><input type="submit" value="Enviar"></td>
-                </tr>
-            </table>
-        </form>
-    </div>
-
+    
 </body>
 
 </html>
