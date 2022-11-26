@@ -28,6 +28,7 @@
 </head>
 
 <body>
+
     <div>
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
             <table>
@@ -52,3 +53,8 @@
 </body>
 
 </html>
+    
+</body>
+
+</html>
+
