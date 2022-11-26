@@ -47,7 +47,7 @@
                 </tr>
             </table>
         </form>
-
+        
         <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
@@ -86,6 +86,7 @@
         echo $txt;
                 
         $promedio = $suma/$a;
+ dev_avance3
         
         echo "<br>";
         echo "<p>El número más chico es: ".$chico."</p>";
@@ -94,6 +95,8 @@
         echo "<br>";
         echo "<p>El promedio es: ".$promedio."</p>";
         echo "<br><br>";
+=======
+ main
         }
         ?>
 
