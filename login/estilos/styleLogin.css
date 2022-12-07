@@ -1,6 +1,7 @@
 :root{
     --principal: #4bd1a0;
     --letras: #114245;
+    --secundario: #36A892;
 }
 
 *{
@@ -12,12 +13,14 @@
 body{
     display: flex;
     flex-direction: column;
+    background: linear-gradient(135deg, #111, #333);
+    height: 100vh;
 }
 
 h2{
     padding: 15px;
     margin: 10px 30px;
-    background-color: var(--principal);
+    background: linear-gradient(30deg, var(--principal), var(--secundario));
     color: #fff;
     border-radius: 10px;
     text-align: center;
@@ -32,15 +35,16 @@ h2{
     padding: 20px 15px;
     gap: 30px;
     color: var(--principal);
-    background-color: #222;
-    border: 3px solid var(--principal);
+    background: transparent;
+    border: 1px solid var(--principal);
     border-radius: 10px;
+    font-size: 1.05rem;
 }
 
 .input-group{
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
 }
 
 
@@ -51,6 +55,7 @@ h2{
     padding: 2px 5px;
     font-size: 0.9rem;
     width: 300px;
+    background-color: #ddd;
 }
 
 .input:focus{
@@ -77,7 +82,7 @@ h2{
 
 button{
     padding: 5px 10px;
-    background-color: #fff;
+    background-color: #ddd;
     border: 2px solid var(--principal);
     border-radius: 5px;
     color: var(--letras);
