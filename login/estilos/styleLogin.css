@@ -14,7 +14,8 @@ body{
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, #111, #333);
-    height: 100vh;
+    height: 100%;
+    background-attachment: fixed;
 }
 
 h2{
