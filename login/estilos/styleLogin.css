@@ -30,7 +30,7 @@ h2{
     align-items: center;
     margin: 15px;
     padding: 20px 15px;
-    gap: 10px;
+    gap: 30px;
     color: var(--principal);
     background-color: #222;
     border: 3px solid var(--principal);
