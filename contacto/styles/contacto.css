@@ -1,0 +1,95 @@
+:root{
+    --principal: #4bd1a0;
+    --letras: #114245;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-title{
+    margin: 15px;
+    padding: 15px;
+    background-color: var(--principal);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.form{
+    align-self: center;
+    display: inline-flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.input-div{
+    margin: 5px 0;
+    padding: 15px;
+    display: flex;
+    background-color: var(--principal);
+    border-radius: 5px;
+}
+
+.email-input{
+    gap: 15px;
+}
+
+.msg-input{
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#email, #msg{    
+    font-size: 0.9rem;
+    padding: 3px 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#email:focus, #msg:focus{
+    outline: none;
+}
+
+#email{
+    width: 400px;
+}
+
+#msg{
+    resize: none;
+}
+
+#submit{
+    font-size: 1.1rem;
+    align-self: center;
+    padding: 5px 20px;
+    margin-top: 5px;
+    border: 1px solid var(--principal);
+    color: var(--principal);
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+
+#submit:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--letras);
+}
+
+.send-msg{
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--letras);
+    color: #fff;
+    border-radius: 5px;
+}
