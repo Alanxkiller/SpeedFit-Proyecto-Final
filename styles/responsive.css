@@ -1,0 +1,31 @@
+@media screen and (max-width: 1150px){
+    .header-img{
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header-img{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-img{
+        width: 400px;
+    }
+
+    .thanks h1{
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header-img{
+        width: 270px;
+    }
+
+    .thanks h1{
+        font-size: 2rem;
+    }
+}
