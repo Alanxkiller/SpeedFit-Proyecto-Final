@@ -1,0 +1,36 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 2%;
+            width: 70%;
+            margin: 5px;
+            text-justify: auto;
+            margin-left: 12%;
+            margin-right: 20%;
+        }
+        .titulo{
+            background: #4bd1a0;
+            padding-left: 10px;
+
+        }
+        .forma{
+            color: #114245;
+        }
+        .tanku{
+            background: #36A892;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">CENTRO DE AYUDA</h1>
+    <br>
+    <p class="foma">Speedfit es un <strong>proyecto institucional</strong>, por lo que <strong>NUNCA</strong> te vamos a pedir dinero real. <br>
+     Las compras NO serán efectuadas. <br>
+     
+     </p>
+     <p class="tanku">Gracias por visitar nuestro sitio. XD </p>
+
+</body>

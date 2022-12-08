@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="https://kit.fontawesome.com/1cd1525fc0.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()"> Centro de ayuda  <i class="fa-solid fa-question"></i></button>
+</div>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "centroAyuda.txt");
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
