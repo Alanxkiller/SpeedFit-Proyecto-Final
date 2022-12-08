@@ -1,0 +1,123 @@
+:root{
+    --principal: #4bd1a0;
+    --letras: #114245;
+    --secundario: #36A892;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #111, #333);
+    height: 100%;
+    background-attachment: fixed;
+}
+
+h2{
+    padding: 15px;
+    margin: 10px 30px;
+    background: linear-gradient(30deg, var(--principal), var(--secundario));
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-form{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 20px 15px;
+    gap: 30px;
+    color: var(--principal);
+    background: transparent;
+    /* border: 1px solid var(--principal); */
+    border-radius: 10px;
+    font-size: 1.05rem;
+    box-shadow: 0px 0px 40px 10px #0005;
+}
+
+.input-group{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.input{
+    border: 2px solid var(--principal);
+    border-radius: 5px !important;
+    color: var(--letras);
+    padding: 2px 5px;
+    font-size: 0.9rem;
+    width: 300px;
+    background-color: #ddd;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.remember{
+    align-self: flex-start;
+}
+
+
+.captcha{
+    display: inline;
+    padding: 10px;
+    font-size: 20px;
+    background-color: var(--letras);
+    color: #eee;
+    user-select: none;
+    letter-spacing: 2px;
+    text-decoration: line-through;
+    font-family: Verdana;
+    border-radius: 5px;
+}
+
+button{
+    padding: 5px 10px;
+    background-color: #ddd;
+    border: 2px solid var(--principal);
+    border-radius: 5px;
+    color: var(--letras);
+    transition: all 0.1s;
+}
+
+#login-btn:hover{
+    background-color: transparent;
+    color: var(--principal);
+}
+
+p > a, p > a:visited{
+    color: #999;
+}
+
+.msg{
+    margin: 15px 35px;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.error{
+    background-color: #702;
+}
+
+.success{
+    background-color: #180;
+}
+
+/* PARA LA RECUPERACION DE CONTRASEÑAS */
+
+.alert{
+    margin: 15px;
+}
