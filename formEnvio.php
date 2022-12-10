@@ -12,41 +12,91 @@ require 'tabEnvio.php';
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos/styleLogin.css">
     <title>Formulario de envío</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+       <script type="text/javascript">
+        function validar(){
+            var form= document.form;
+            if(form.nombreC.value==0){
+                swal('campo vacio','El campo nombre está vació', 'error')
+                form.nombreC.value="";
+                form.nombreC.focus();
+                return false;
+            }
+            if(form.email.value==0){
+                swal('campo vacio','El campo email está vació', 'error')
+                form.email.value="";
+                form.email.focus();
+                return false;
+            }
+            if(form.direccion.value==0){
+                swal('campo vacio','El campo direccion está vació', 'error')
+                form.direccion.value="";
+                form.direccion.focus();
+                return false;
+            }
+            if(form.ciudad.value==0){
+                swal('campo vacio','El campo ciudad está vació', 'error')
+                form.ciudad.value="";
+                form.ciudad.focus();
+                return false;
+            }
+            if(form.pais.value==0){
+                swal('campo vacio','El campo país está vació', 'error')
+                form.pais.value="";
+                form.pais.focus();
+                return false;
+            }
+            if(form.cp.value==0){
+                swal('campo vacio','El campo código postal está vació', 'error')
+                form.cp.value="";
+                form.cp.focus();
+                return false;
+            }
+            if(form.tel.value==0){
+                swal('campo vacio','El campo telefono está vació', 'error')
+                form.tel.value="";
+                form.tel.focus();
+                return false;
+            }
+            swal('datos enviados con exito', 'sucess')
+            form.submit();
+        }            
+    </script>
 </head>
 <body>
     <h2>¿A dónde quieres que te llegue tu pedido?</h2>
-    <form  method="post" action="formEnvio.php" class="">
+    <form  method="post" action="formEnvio.php" name="form">
     
         <div class="input-group">
             <label>Nombre completo:</label>
-            <input type="text" name="nombreC" class="input" value="" required>
+            <input type="text" name="nombreC" class="input" value="" onsubmit="return validar();" >
         </div>
         <div class="input-group">
             <label>Correo Electrónico:</label>
-            <input type="email" name="email" class="input" value="" required>
+            <input type="email" name="email" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="input-group">
             <label>Dirección:</label>
-            <input type="text" name="direccion" class="input" value="" required>
+            <input type="text" name="direccion" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="input-group">
             <label>Ciudad:</label>
-            <input type="text" name="ciudad" class="input" value="" required>
+            <input type="text" name="ciudad" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="input-group">
             <label>País:</label>
-            <input type="text" name="pais" class="input" value="" required>
+            <input type="text" name="pais" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="input-group">
             <label>Código postal:</label>
-            <input type="number" name="cp" class="input" value="" required>
+            <input type="number" name="cp" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="input-group">
             <label>Número telefónico:</label>
-            <input type="number" name="tel" class="input" value="" required>
+            <input type="tel" name="tel" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="form-input">
-            <button id="envio-btn" name="envio-btn">Aceptar</button>
+            <button id="envio-btn" name="envio-btn" onclick="validar();">Aceptar</button>
         </div>
         
         
