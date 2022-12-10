@@ -5,6 +5,12 @@
   if(!isset($_SESSION['admin'])){
     $_SESSION['admin'] = false;
   }
+
+  if(!isset($_SESSION['totalProductos'])){
+    $_SESSION['totalProductos'] = 0; 
+  }
+
+
   ?>
 <!doctype html>
 <html lang="es">
