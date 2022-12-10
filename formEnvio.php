@@ -58,7 +58,7 @@ require 'tabEnvio.php';
                 form.tel.focus();
                 return false;
             }
-            swal('datos enviados con exito', 'sucess')
+            swal('datos enviados con exito', 'success')
             form.submit();
         }            
     </script>
