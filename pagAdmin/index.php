@@ -1,11 +1,11 @@
 <?php
-    
+    include 'servidor.php';
     session_start();
     //session_destroy();
-$servidor='localhost';
-$cuenta='id19772797_root';
-$password='Asd123Asd123.';
-$bd='id19772797_tiendatenis';
+// $servidor='localhost';
+// $cuenta='id19772797_root';
+// $password='Asd123Asd123.';
+// $bd='id19772797_tiendatenis';
     $contador=0;
     // Create connection
     $conn = new mysqli($servidor,$cuenta,$password,$bd);
@@ -22,13 +22,13 @@ $bd='id19772797_tiendatenis';
         $query = "SELECT * FROM productos";
         $resultado = $conn -> query($query);
         $numeroRandom=rand(1,$contador);
-        echo "Numero random: " . $numeroRandom=rand(1,$contador);
+        // echo "Numero random: " . $numeroRandom=rand(1,$contador);
         
 
     }
     if(isset($_SESSION['carrito']['productos'])){
         $datos['numero']=count($_SESSION['carrito']['productos']);
-        print_r($_SESSION);
+        // print_r($_SESSION);
         //echo "   contando=" . count($_SESSION['carrito']['productos']); 
         //echo "contadorDORES" . $_SESSION['totalProductos'];  
     }
@@ -40,18 +40,19 @@ $bd='id19772797_tiendatenis';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Consulta de Productos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estiloCompra.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="css/estiloConsultas.css">
 </head>
   <body>
   <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Tenis</a>
+            <a class="navbar-brand" href="#">PANEL DE ADMINISTRADOR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -89,12 +90,12 @@ $bd='id19772797_tiendatenis';
                                     <div class="card-flyer">
                                         <div class="text-box">
                                             <div class="image-box">
-                                                <img src="<?php echo $fila['nombreImg']?>" alt="" />
+                                                <img src="<?php echo "../imgProductos/".$fila['nombreImg']?>" alt="" />
                                             </div>
                                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $fila["nombre"]?></h5>
                                 <p class="card-text">id: <?php echo $fila["idProd"] ?></p>
-                                <p class="card-text"><?php echo $fila["descripcion"] ?></p>
+                                <p class="card-text desc"><?php echo $fila["descripcion"] ?></p>
                                 <p class="card-text">Existencias: <?php echo $fila["existencia"] ?></p>
                                 <?php if ($contadorDescuento == $numeroRandom){ ?>
                                         <p class="card-text"><small class="text-success" >Aplica descuento del 10%<del> $ <?php echo $fila["precio"] ?></small></del></p>

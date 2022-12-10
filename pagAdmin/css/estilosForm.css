@@ -6,7 +6,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    
     font-family: 'Poppins', sans-serif;
 }
 
@@ -24,7 +24,7 @@
     grid-template-columns: repeat(4, 1fr);
     margin: 15px 20px;
     padding: 10px 15px;
-    border: 5px solid var(--principal);
+    box-shadow: 0px 0px 20px 5px #0004;
     background-color: #222;
     color: var(--principal);
     border-radius: 10px;
@@ -46,6 +46,10 @@ label{
 label span{
     font-size: 0.7rem;
     font-weight: lighter;
+}
+
+#formProductos div input{
+    width: 100%;
 }
 
 input[type=text],
@@ -111,6 +115,7 @@ input[type=submit]:hover{
 
 .table-container table{
     font-size: 0.8rem;
+    border-radius: 10px;
 }
 
 .title-columns td{
@@ -141,4 +146,33 @@ td{
 
 .edit{
    grid-template-columns: repeat(8, 1fr);
+}
+
+@media screen and (max-width:1115px) {
+    #form-productos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #add{
+        grid-row: 5/6;
+    }
+}
+
+@media screen and (max-width:715px) {
+    #form-productos{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #add{
+        grid-row: span 1;
+    }
+}
+
+@media screen and (max-width:530px) {
+    #form-productos div input{
+        width: 100%;
+    }
+    #add{
+        font-size: 0.6rem;
+    }
 }
