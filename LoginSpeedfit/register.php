@@ -53,22 +53,22 @@ require 'servidor.php';
     
         <div class="input-group">
             <label>Usuario:</label>
-            <input type="text" name="username" class="input" value="" onsubmit="return validar();">
+            <input type="text" name="username" class="input" value="" onload="return validar();">
         </div>
         <div class="input-group">
             <label>Correo Electrónico:</label>
-            <input type="email" name="email" class="input" value="" onsubmit="return validar();">
+            <input type="email" name="email" class="input" value="" onload="return validar();">
         </div>
         <div class="input-group">
             <label>Contraseña:</label>
-            <input type="password" name="password" class="input" value="" onsubmit="return validar();">
+            <input type="password" name="password" class="input" value="" onload="return validar();">
         </div>
         <div class="input-group">
             <label>Repetir Contraseña:</label>
-            <input type="password" name="password2" class="input" value="" onsubmit="return validar();">
+            <input type="password" name="password2" class="input" value="" onload="return validar();">
         </div>
         <div class="form-input">
-            <button id="login-btn" name="reg-user" onclick="validar();">Registrarse</button>
+            <button id="login-btn" name="reg-user" onclick="return validar();">Registrarse</button>
         </div>
         
         <p>¿Ya tienes una cuenta? <a href="login.php">Iniciar Sesión</a></p>
