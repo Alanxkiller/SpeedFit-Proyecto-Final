@@ -13,30 +13,62 @@ require 'servidor.php';
     <link rel="stylesheet" href="estilos/styleLogin.css">
     <link rel="stylesheet" href="estilos/responsiveLogin.css">
     <link rel="shortcut icon" href="images/SpeedFit.ico" type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        function validar(){
+            var form= document.form;
+            if(form.username.value==0){
+                swal('campo vacio','El campo usuario está vació', 'error')
+                form.username.value="";
+                form.username.focus();
+                return false;
+            }
+            if(form.email.value==0){
+                swal('campo vacio','El campo email está vació', 'error')
+                form.email.value="";
+                form.email.focus();
+                return false;
+            }
+            if(form.password.value==0){
+                swal('campo vacio','El campo contraseña está vació', 'error')
+                form.password.value="";
+                form.password.focus();
+                return false;
+            }
+            if(form.password2.value==0){
+                swal('campo vacio','El campo repetir contraseña está vació', 'error')
+                form.password2.value="";
+                form.password2.focus();
+                return false;
+            }
+            swal('datos enviados con exito', 'sucess')
+            form.submit();
+        }            
+    </script>
     <title>Registrarse</title>
 </head>
 <body>
     <h2>Registrarse</h2>
-    <form  method="post" action="register.php" class="login-form">
+    <form  method="post" action="register.php" class="login-form" name="form">
     
         <div class="input-group">
             <label>Usuario:</label>
-            <input type="text" name="username" class="input" value="" required>
+            <input type="text" name="username" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="input-group">
             <label>Correo Electrónico:</label>
-            <input type="email" name="email" class="input" value="" required>
+            <input type="email" name="email" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="input-group">
             <label>Contraseña:</label>
-            <input type="password" name="password" class="input" value="" required>
+            <input type="password" name="password" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="input-group">
             <label>Repetir Contraseña:</label>
-            <input type="password" name="password2" class="input" value="" required>
+            <input type="password" name="password2" class="input" value="" onsubmit="return validar();">
         </div>
         <div class="form-input">
-            <button id="login-btn" name="reg-user">Registrarse</button>
+            <button id="login-btn" name="reg-user" onclick="validar();">Registrarse</button>
         </div>
         
         <p>¿Ya tienes una cuenta? <a href="login.php">Iniciar Sesión</a></p>
