@@ -51,7 +51,7 @@
                 <a class="nav-link" href="https://www.facebook.com/people/Speedfit/100085451631969/" target="blank"><i class="fa-brands fa-facebook"></i></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Ayuda</a>
+                <a class="nav-link" href="preguntasFrecuentes.php">Ayuda</a>
               </li>
               <?php if(isset($_SESSION['username'])) { ?>
               <li class="nav-item">

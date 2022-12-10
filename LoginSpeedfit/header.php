@@ -47,7 +47,7 @@
               </li>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Ayuda</a>
+                <a class="nav-link" href="../preguntasFrecuentes.php">Ayuda</a>
               </li>
               <?php if(isset($_SESSION['username'])) { ?>
               <li class="nav-item">
