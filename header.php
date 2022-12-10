@@ -17,7 +17,7 @@
     <!-- Bootstrap CSS para iconos de redes sociales -->
     
     <script src="https://kit.fontawesome.com/1cd1525fc0.js" crossorigin="anonymous"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styleHeader.css">
 
     <title>Speedfit</title>
@@ -42,7 +42,7 @@
                 <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Acerca de</a>
+                <a class="nav-link" href="info.php">Acerca de</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php">Contactanos</a>
@@ -53,17 +53,29 @@
               <li class="nav-item">
                 <a class="nav-link" href="">Ayuda</a>
               </li>
+              <?php if(isset($_SESSION['username'])) { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="carrito/categoriaGeneral.php">Productos</a>
+              </li>
+              <?php }else{ ?>
+                <a class="nav-link" href="#">Inicia Sesión para Comprar</a>
+              <?php } ?>
               <?php if($_SESSION['admin']) { ?>
               <li class="nav-item">
                 <a class="nav-link" href="pagAdmin/formulario.php">Admin</a>
               </li>
               <?php } ?>
+             
+
               
             </ul>
             <form class='d-flex' >
             <?php
               if(isset($_SESSION["username"])){?>
                 <a href='LoginSpeedfit/index.php' class="nav-link"><?php echo $_SESSION['username']; ?></a>
+                
+                <a class="nav-link" href="carrito/carrito.php">Carrito</a>
+                
                 <a class='nav-link' href='LoginSpeedfit/index.php?logout=1'>Log-out</a>
               <?php  } else { ?>
                 <a class='nav-link navbar-dark' href='LoginSpeedfit/index.php'>Log-in</a>              
@@ -75,6 +87,9 @@
         </div>
       </nav>
 
+
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
   </body>
   
 </html>

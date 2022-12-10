@@ -19,8 +19,6 @@
     <script src="https://kit.fontawesome.com/1cd1525fc0.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="estilos/styleHeader.css">
-
-    <title>Speedfit</title>
   </head>
   <body>
   <!-- carrusel-->
@@ -39,10 +37,10 @@
                 <a class="nav-link" aria-current="page" href="../index.php">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Acerca de</a>
+                <a class="nav-link" href="../info.php">Acerca de</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Contactanos</a>
+                <a class="nav-link" href="../contacto.php">Contactanos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="https://www.facebook.com/people/Speedfit/100085451631969/" target="blank"><i class="fa-brands fa-facebook"></i></a>
@@ -51,11 +49,19 @@
               <li class="nav-item">
                 <a class="nav-link" href="">Ayuda</a>
               </li>
+              <?php if(isset($_SESSION['username'])) { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="../carrito/categoriaGeneral.php">Productos</a>
+              </li>
+              <?php }else{ ?>
+                <a class="nav-link" href="#">Inicia Sesión para Comprar</a>
+              <?php } ?>
               <?php if($_SESSION['admin']) { ?>
               <li class="nav-item">
                 <a class="nav-link" href="../pagAdmin/formulario.php">Admin</a>
               </li>
               <?php } ?>
+              
               
             </ul>
             <form class='d-flex' style="display:flex; align-items:center;">
@@ -63,7 +69,7 @@
               if(isset($_SESSION["username"])){?>
                 <?php echo "<span style='color:#eee'>".$_SESSION['username']."</span>"; ?>
                 <a class='nav-link' href='index.php?logout=1' >Log-out</a>
-                
+                <a class="nav-link" href="../carrito/carrito.php">Carrito</a>
               <?php  } else { ?>
                 <a class='nav-link' href='index.php' style='color:white'>Log-in</a>";              
               <?php } ?>

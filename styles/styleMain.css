@@ -12,20 +12,90 @@
 }
 
 body{
-    background: #fff;
+    background: linear-gradient(135deg, #111, #333);
 }
+
 
 header{
+    background-color: transparent;
+    margin: 20px 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    
 }
 
-.header-img{
-    width: 1150px;
-    border: 2px solid var(--principal);
+header span{
+    font-family: 'Bayon', 'Poppins', sans-serif;
+    letter-spacing: 8px;
+    margin: 10px;
+    text-align: center;
+}
+
+.green{
+    font-size: 7rem;
+    background-color: var(--letras);
+    color: #000;
+}
+
+.white{
+    font-size: 4rem;
+    background-color: #fff;
+    color: #000;
+}
+
+.normal{
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.adv{
+    background: transparent;
+    padding: 15px;
+    margin: 10px 10px;
     border-radius: 10px;
-    justify-self: center;
-    align-self: center;
+    /* box-shadow: 0px 0px 10px 2px #0007; */
+    text-align: center;
+    color: var(--principal);
+}
+
+.adv h1{
+    font-family: 'Bayon', 'Poppins', sans-serif;
+    font-size: 7rem;
+}
+
+.adv p{
+    font-size: 2.3rem;
+}
+
+.card-category{
+    background: transparent;
+    border: 2px solid var(--principal);
+    display: flex;
+    margin: 10px 10px;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 10px 2px #0007; */
+    
+}
+
+.category{
+    background: transparent;
+    padding: 30px;
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+    color: var(--principal);
+}
+
+.category h3{
+    font-family: 'Bayon', 'Poppins', sans-serif;
+    font-size: 2.3rem;
+}
+
+.category a{
+    color: var(--principal);
 }
 
 #container{
@@ -35,7 +105,7 @@ header{
     padding: 15px;
     background: linear-gradient(30deg, var(--principal), var(--secundario));
     color: #eee;
-    box-shadow: 0px 0px 10px 2px #0007;
+    /* box-shadow: 0px 0px 10px 2px #0007; */
     border-radius: 10px;
 }
 
@@ -47,12 +117,22 @@ header{
     gap: 10px;
 }
 
+#carouselExampleControls{
+    margin: 20px 0;
+}
+
+.d-block{
+    height: 40%;
+    width: 100%;
+}
+
 .thanks{
     display: flex;
     justify-content: center;
     align-content: center;
     padding: 10px;
-    background: linear-gradient(135deg, #111, #333);
+    background: transparent;
+    margin-bottom: 10px;
 }
 
 .thanks h1{
@@ -67,5 +147,5 @@ header{
     font-family: 'Bayon', sans-serif;
     letter-spacing: 6px;
     filter: grayscale(1) contrast(200%);
-
+    
 }

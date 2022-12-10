@@ -15,7 +15,7 @@ if($conexion->connect_errno){
 }else{
     // Comprobar si el botón fue presionado (REGISTRO)
     if(isset($_POST['reg-user']) && !empty($_POST['username'])){
-        // Comprobar las contraseñas
+        // Comprobar las contraseñas        
         if($_POST['password'] == $_POST['password2']){
             $username = $_POST['username'];
             $email = $_POST['email'];

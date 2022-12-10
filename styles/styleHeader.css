@@ -9,6 +9,7 @@
     padding: 10px 0 !important;
     display: flex !important;
     justify-content: center !important;
+    font-family: 'Poppins', sans-serif !important;
     border-radius: 10px;
     background: linear-gradient(135deg, #111e, #333e);
     position: sticky !important;
@@ -26,6 +27,7 @@
 
 .nav-link{
     color: #eee;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .d-flex{
