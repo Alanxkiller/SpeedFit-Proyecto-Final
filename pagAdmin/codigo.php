@@ -1,9 +1,10 @@
 <?php 
+    include 'servidor.php';
     if(isset($_POST['botonEliminar'])){
-$servidor='localhost';
-$cuenta='id19772797_root';
-$password='Asd123Asd123.';
-$bd='id19772797_tiendatenis';
+// $servidor='localhost';
+// $cuenta='id19772797_root';
+// $password='Asd123Asd123.';
+// $bd='id19772797_tiendatenis';
         //conexion a la base de datos
         $conexion = new mysqli($servidor,$cuenta,$password,$bd);
         if($conexion->connect_errno){
