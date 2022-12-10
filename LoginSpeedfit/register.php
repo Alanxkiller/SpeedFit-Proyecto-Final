@@ -41,7 +41,7 @@ require 'servidor.php';
                 form.password2.focus();
                 return false;
             }
-            swal('datos enviados con exito', 'sucess')
+            swal('datos enviados con exito', 'success')
             form.submit();
         }            
     </script>
