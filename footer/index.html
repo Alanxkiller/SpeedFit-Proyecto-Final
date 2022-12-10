@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+!doctype html>
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Footer con efecto wave</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="CSS/Estilos.css" />
-
+    <link rel="stylesheet" href="CSS/Estilos.css">
     <script
       src="https://kit.fontawesome.com/41bcea2ae3.js"
       crossorigin="anonymous"
     ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    
+    <title>Footer con efecto wave</title>
   </head>
-
-    <footer>
-      <div class="container__footer">
-        <div class="box__footer">
-          <div class="logo">
-            <img src="Images/SpeedFit.png" alt="logo">
-          </div>
-          <div class="terms">
-            <p>
+  <body>
+        <!--FOOTER-->
+        <footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap">
+            <div class="box--footer">
+                <div class="logo">
+                    <img src="Images/SpeedFit.png" alt="logo" style="width: 200px;
+    margin-left: 55px;">
+                </div>
+                <div class="terms" style="text-justify: auto; max-width: 350px; margin-top: 20px; font-weight: 500; color: #7a7a7a; font-size: 18px" >
+            <p style="margin-left: 20px;">
               Queda prohibido copiar, reproducir, distribuir, publicar,
               transmitir, difundir, o en cualquier modo explotar cualquier parte
               de este servicio sin la autorización previa por escrito del equipo
@@ -31,9 +32,27 @@
               autoría del material.
             </p>
           </div>
-        </div>
+            </div>
+            
+               <div class="box__copyright" style="max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;">
+        <script type="text/javascript">
+          copyright = new Date();
+
+          update = copyright.getFullYear();
+
+          document.write(
+            "Todos los derechos reservados ©  " +
+              update +
+              " " +
+              "SPEEDFIT"
+          );
+        </script>
         
-     <div>
+      </div> 
+        <div class="centroAyuda" style="margin-right: 20px;">
          <div id="demo">
             <button class="btnaiuda" type="button" onclick="loadDoc()"> Centro de ayuda  <i class="fa-solid fa-question"></i></button>
             </div>
@@ -49,23 +68,9 @@
               xhttp.send();
             }
             </script>
-     </div>
-         
-      <div class="box__copyright">
-        <script type="text/javascript">
-          copyright = new Date();
-
-          update = copyright.getFullYear();
-
-          document.write(
-            "Todos los derechos reservados ©  " +
-              update +
-              " " +
-              "SPEEDFIT"
-          );
-        </script>
+     </div> 
         
-      </div>
-    </footer>
+        
+  </footer>
   </body>
 </html>
