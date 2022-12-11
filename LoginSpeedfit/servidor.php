@@ -2,12 +2,13 @@
 session_start();
 
 $_SESSION['success'] = false;
+$puerto='33065';
 $servidor='localhost';
-$cuenta='root';
-$password='';
+$cuenta='roots';
+$password='admin';
 $bd='tiendatenis';
 
-$conexion = mysqli_connect($servidor, $cuenta, $password, $bd);
+$conexion = mysqli_connect($servidor, $cuenta, $password, $bd, $puerto);
 
 
 if($conexion->connect_errno){
