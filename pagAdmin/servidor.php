@@ -1,10 +1,13 @@
 <?php
-$servidor='localhost';
-$cuenta='root';
-$password='';
-$bd='tiendatenis';
-
-$conexion = mysqli_connect($servidor, $cuenta, $password, $bd);
+//session_destroy();
+    $servidor='localhost';
+    $cuenta='roots';
+    $puerto='33065';
+    $password='admin';
+    $bd='tiendatenis';
+    $contador=0;
+    // Create connection
+    $conn = new mysqli($servidor,$cuenta,$password,$bd,$puerto);
 
 // Código para agregar Productos
 

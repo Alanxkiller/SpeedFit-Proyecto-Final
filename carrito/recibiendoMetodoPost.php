@@ -1,12 +1,14 @@
 <?php
     session_start();
+    //session_destroy();
     $servidor='localhost';
-    $cuenta='root';
-    $password='';
+    $cuenta='roots';
+    $puerto='33065';
+    $password='admin';
     $bd='tiendatenis';
     $contador=0;
     // Create connection
-    $conn = new mysqli($servidor,$cuenta,$password,$bd);
+    $conn = new mysqli($servidor,$cuenta,$password,$bd,$puerto);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

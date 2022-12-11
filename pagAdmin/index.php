@@ -8,7 +8,7 @@
 // $bd='id19772797_tiendatenis';
     $contador=0;
     // Create connection
-    $conn = new mysqli($servidor,$cuenta,$password,$bd);
+    $conn = new mysqli($servidor,$cuenta,$password,$bd,$puerto);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
