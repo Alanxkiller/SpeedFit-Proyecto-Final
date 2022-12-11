@@ -92,13 +92,13 @@
                 <li class="nav-item">
                 <a class="nav-link" href="eliminar2prueba.php">Eliminar</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a class="nav-link" href="index.php">Consultas</a>
                 </li>
 
                 <li id="carritoMostrar" class="nav-item">
-                <a class="nav-link" href="#"> carrito <span class="badge bg-secondary"><?php echo $_SESSION['totalProductos']; ?></span></a>
-                </li>
+                <a class="nav-link" href="#"> carrito <span class="badge bg-secondary"></span></a>
+                </li> -->
                 
             </ul>
             </div>
@@ -184,7 +184,7 @@
 
                 <br><br>
                     
-                    <button id="botonEliminar" type="button" value="<?php echo $_COOKIE['id'];?>"  class="btn btn-primary">Eliminar</button>
+                    <button id="botonEliminar" type="button" value="<?php if(isset($_COOKIE['id'])){echo $_COOKIE['id'];}?>"  class="btn btn-primary">Eliminar</button>
                 
             </div>
             <?php
@@ -195,7 +195,7 @@
     ?>
 
 
-    
+<p><a href="../index.php">Volver a Inicio</a></p>
 
 </body>
 </html>

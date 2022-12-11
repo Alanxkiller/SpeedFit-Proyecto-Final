@@ -1,0 +1,42 @@
+:root{
+    --principal: #4bd1a0;
+    --letras: #114245;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+th{
+    padding: 5px;
+}
+.table-responsive{
+    background: linear-gradient(135deg, #111, #333);
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px #0004;
+}
+
+.table thead tr th{
+    color: var(--principal);
+    padding: 10px;
+}
+
+.table tbody tr td{
+    color: #eee;
+}
+
+.btn, .btn-primary{
+    background-color: #fff;
+    border: 2px solid var(--principal);
+    color: var(--letras);
+}
+
+.btn:hover{
+    background-color: transparent;
+    border: 2px solid var(--principal);
+    color: var(--principal);
+}
+
+.row{
+    margin: 20px 0;
+}

@@ -26,6 +26,6 @@
      Las compras NO serán efectuadas. <br>
      
      </p>
-     <p class="tanku">Gracias por visitar nuestro sitio. XD </p>
+     <p class="tanku">Gracias por visitar nuestro sitio.</p>
 
 </body>
