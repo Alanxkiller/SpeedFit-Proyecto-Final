@@ -38,13 +38,13 @@ if(!isset($_SESSION['totalProductos'])){
                 <li class="nav-item">
                 <a class="nav-link" href="eliminar2prueba.php">Eliminar</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a class="nav-link" href="index.php">Consultas</a>
                 </li>
 
                 <li id="carritoMostrar" class="nav-item">
-                <a class="nav-link" href="#"> carrito <span class="badge bg-secondary"><?php echo $_SESSION['totalProductos']; ?></span></a>
-                </li>
+                <a class="nav-link" href="#"> carrito <span class="badge bg-secondary"></span></a>
+                </li> -->
                 
             </ul>
             </div>
