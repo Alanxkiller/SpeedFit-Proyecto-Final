@@ -37,11 +37,27 @@
     }else{
         $listaCarrito=null;
     }
+
+    if(isset($_POST['canjear'])){
+        if($_POST['cupon'] == "speedfitevrwr79705"){
+            $msg = "Descuento del 20%";
+            $_SESSION['precio2'] = $_SESSION['precio'] - ($_SESSION['precio'] * 0.20);
+            $aceptado = true;
+        }
+        else if($_POST['cupon'] == "s3rgi0m4ast3r34092"){
+            $msg = "Descuento del 20%";
+            $_SESSION['precio2'] = $_SESSION['precio'] - ($_SESSION['precio'] * 0.20);
+            $aceptado = true;
+        }
+        else if($_POST['cupon'] == "us4g1n0m1m1spdfit"){
+            $msg = "Descuento de $100";
+            $_SESSION['precio2'] = $_SESSION['precio'] - 100;
+            $aceptado = true;
+        }
+    }
     
     //si al dejar al carrito vacio no pongo lo de abajo nos mostrara error por eso si 
     //el carrito esta vacio pondre como null al arrar listacarrito
-    
-    
 ?>
 
 <!doctype html>
@@ -61,31 +77,6 @@
 
 </head>
   <body>
-    <!-- <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="categoriaGeneral.php">Tenis</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="categoria1.php">Deportivo</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="categoria2.php">Casual</a>
-                </li>
-
-                <li id="carritoMostrar" class="nav-item">
-                <a class="nav-link" href="carrito.php"> carrito <span class="badge bg-secondary"><?php echo $_SESSION['totalProductos']; ?></span></a>
-                </li>
-                
-            </ul>
-            </div>
-        </div>
-    </nav> -->
-    
-
     <div class="container">
         <div class="table-responsive">
             <table class="table">
@@ -140,13 +131,81 @@
 
         <div class="row">
             <div class="col-md-5 offset-md-7 d-grid gap-2">
-                    <button class="btn btn-primary btn-lg">Realizar Pago</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Realizar Pago</button>
             </div>
-    </div>
+        </div>
 
-    <script>
 
-    </script>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalles de Pago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <?php if($listaCarrito == null){ ?>
+                    <p>El carrito está vacío</p>
+                <?php } else { ?>
+                    
+                    <h6>Detalles de el/los Productos:</h6>
+                    <?php foreach($listaCarrito as $producto){ 
+                        $idProd= $producto['idProd'];
+                        $nombre= $producto['nombre'];
+                        $precio= $producto['precio'];
+                        $cantidad= $producto['cantidad'];
+                        $descuento= $producto['descuento'];
+                        $subtotalProductoActual=$cantidad * $precio;
+                        ?>
+                        
+                        <div class="products">
+                            <p>Nombre: <label for=""><?php echo $nombre ?></label></p>
+                            <p>Precio: <label for="">$<?php echo $precio ?></label></p>
+                            <p>Cantidad: <label for=""><?php echo $cantidad ?></label></p>
+                            <p>Subtotal (P): <label for="">$<?php echo $subtotalProductoActual ?></label></p>
+                        </div>
+                    <?php } ?>
+                    
+                    <div class="details">
+                        <form action="carrito.php" method="post">
+                        <p>Subtotal: $<?php echo $total; ?></p>
+                        <?php
+                            $iva = $total * 0.16;
+                            $conImpuesto = $total + $iva;
+                            if($_SESSION['totalProductos'] <= 3){
+                                $gastos = 50;
+                                $envio = $conImpuesto + $gastos;
+                            }else{
+                                $gastos = 0;
+                                $envio = $conImpuesto;
+                            }
+                            $_SESSION['precio'] = $envio;
+                        ?>
+                        <p>Impuestos (IVA): $<?php echo $iva; ?></p>
+                        <p>Total (Con IVA): $<?php echo $conImpuesto; ?></p>
+                        <p>Gastos de Envío: $<?php echo $gastos; ?></p>
+                        <p>Precio Final: $<?php echo $envio; ?></p>
+                        <label for="">Ingresa cupon promocional</label> <input type="text" name="cupon" id="cupon">
+                        <input type="submit" class="btn" value="Canjear" name="canjear">
+                        </form>
 
+                        <?php if(isset($aceptado)){ ?>
+                            <p class="cupon-msg">Cupón Valido. <?php echo $msg ?></p>
+                            <p>Precio Nuevo: <?php echo $_SESSION['precio2'] ?></p>
+                        <?php } ?>
+                    </div>
+                    
+                <?php } ?>   
+                </div>
+                <div class="modal-footer">
+                    <?php if($listaCarrito == null){ ?>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Volver</button>
+                    <?php } else { ?>
+                        <a href="envioForm/formEnvio.php" class="btn btn-primary">Continuar</a>
+                    <?php } ?>   
+                </div>
+                </div>
+            </div>
+        </div>    
 </body>
 </html>

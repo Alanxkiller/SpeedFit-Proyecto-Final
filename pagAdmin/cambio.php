@@ -46,6 +46,12 @@ if(!isset($_SESSION['totalProductos'])){
                 <li class="nav-item">
                 <a class="nav-link" href="eliminar2prueba.php">Eliminar</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href="grafica/grafica1.php">Gráfica 1</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="grafica/grafica2.php">Gráfica 2</a>
+                </li>
                 <!-- <li class="nav-item">
                 <a class="nav-link" href="index.php">Consultas</a>
                 </li>
