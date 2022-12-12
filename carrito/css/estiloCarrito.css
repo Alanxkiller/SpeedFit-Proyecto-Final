@@ -1,0 +1,128 @@
+:root{
+    --principal: #4bd1a0;
+    --letras: #114245;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+th{
+    padding: 5px;
+}
+.table-responsive{
+    background: linear-gradient(135deg, #111, #333);
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px #0004;
+}
+
+.table thead tr th{
+    color: var(--principal);
+    padding: 10px;
+}
+
+.table tbody tr td{
+    color: #eee;
+}
+
+.btn, .btn-primary{
+    background-color: #fff;
+    border: 2px solid var(--principal);
+    color: var(--letras);
+}
+
+.btn:hover{
+    background-color: transparent;
+    border: 2px solid var(--principal);
+    color: var(--principal);
+}
+
+.row{
+    margin: 20px 0;
+}
+
+.modal-body > .products{
+    background: linear-gradient(135deg, #111, #333);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    color: #fff;
+}
+
+.modal-body > .products label{
+    color: var(--principal);
+}
+
+.modal-body > .details{
+    background: linear-gradient(135deg, var(--principal), var(--letras));
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    color: #fff;
+}
+
+.login-form{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 20px 15px;
+    gap: 30px;
+    color: var(--principal);
+    background: linear-gradient(135deg, #111, #333);
+    /* border: 1px solid var(--principal); */
+    border-radius: 10px;
+    font-size: 1.05rem;
+    
+}
+
+.input-group{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.input{
+    border: 2px solid var(--principal);
+    border-radius: 5px !important;
+    color: var(--letras);
+    padding: 2px 5px;
+    font-size: 0.9rem;
+    width: 100%;
+    background-color: #ddd;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.barras{
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+}
+
+#cupon{
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    padding: 2px 5px;
+}
+
+#cupon:focus{
+    outline: none;
+}
+
+.cupon-msg{
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #fff;
+    color: var(--principal);
+    border-radius: 5px;
+}
