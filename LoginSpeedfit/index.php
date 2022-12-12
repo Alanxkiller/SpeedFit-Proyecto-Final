@@ -29,8 +29,8 @@ if(!isset($_SESSION['changed'])){
 
     
     <link rel="stylesheet" href="estilos/styleUser.css">
-	<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <title>Document</title>
+	
+    <title>Bienvenido</title>
 </head>
 <body>
 

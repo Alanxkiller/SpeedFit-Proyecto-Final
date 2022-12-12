@@ -15,6 +15,7 @@
 <!doctype html>
 <html lang="es">
   <head>
+  <link REL="SHORTCUT ICON" HREF="../img/SpeedFit.png">
     <link REL="SHORTCUT ICON" HREF="img/SpeedFit.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +25,7 @@
     <!-- Bootstrap CSS para iconos de redes sociales -->
     
     <script src="https://kit.fontawesome.com/1cd1525fc0.js" crossorigin="anonymous"></script>
-
+    <title>Tiendita</title>
     <link rel="stylesheet" href="css/styleHeader.css">
   </head>
   <body>
@@ -81,9 +82,9 @@
             <form class='d-flex' style="display:flex; align-items:center;">
             <?php
               if(isset($_SESSION["username"])){?>
-                <?php echo "<span style='color:#eee'>".$_SESSION['username']."</span>"; ?>
-                <a class='nav-link' href='index.php?logout=1' >Log-out</a>
-                <a class="nav-link" href="../carrito/carrito.php">Carrito</a>
+                <?php echo "<a href='../LoginSpeedfit/index.php' style='color:#eee'>".$_SESSION['username']."</a>"; ?>
+                <a class='nav-link' href='../LoginSpeedfit/index.php?logout=1' >Salir</a>
+                
               <?php  } else { ?>
                 <a class='nav-link' href='index.php' style='color:white'>Log-in</a>";              
               <?php } ?>

@@ -17,6 +17,7 @@ if($conexion->connect_errno){
     if(isset($_POST['reg-user']) && !empty($_POST['username'])){
         // Comprobar las contraseñas        
         if($_POST['password'] == $_POST['password2']){
+            $name = $_POST['name'];
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -28,7 +29,7 @@ if($conexion->connect_errno){
                 $_SERVER['error'] = "Esta cuenta ya existe, por favor inicie sesión.";
             }else{
                 // Insertando los datos
-                $sql = "INSERT INTO usuarios (nomUsuario, correo, contraseña, bloqueo, admin) VALUES ('$username','$email','$hash','no', 'no')";
+                $sql = "INSERT INTO usuarios (nomUsuario, correo, contraseña, bloqueo, admin, nombreCom) VALUES ('$username','$email','$hash','no', 'no', '$name')";
 
                 $conexion->query($sql);
                 if ($conexion->affected_rows >= 1){ //revisamos que se inserto un registro

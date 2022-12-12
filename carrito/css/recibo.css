@@ -1,0 +1,43 @@
+:root{
+    --principal: #4bd1a0;
+    --letras: #114245;
+    --secundario: #36A892;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+h2{
+    padding: 15px;
+    margin: 10px 30px;
+    background: linear-gradient(30deg, var(--principal), var(--secundario));
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;  
+}
+
+p{
+    padding: 15px;
+    margin: 10px 30px;
+    background: linear-gradient(30deg, #111, #333);
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn{
+    padding: 10px 15px;
+    background-color: #fff;
+    color: var(--letras);
+    border: 2px solid var(--principal);
+    align-self: center;
+    margin: 15px 30px;
+}
+
+.btn:hover{
+    background-color: transparent;
+    color: var(--principal);
+    border: 2px solid var(--principal);
+    
+}

@@ -12,11 +12,17 @@ require 'servidor.php';
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos/styleLogin.css">
     <link rel="stylesheet" href="estilos/responsiveLogin.css">
-    <link rel="shortcut icon" href="images/SpeedFit.ico" type="image/x-icon">
+    <link REL="SHORTCUT ICON" HREF="../img/SpeedFit.png">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
         function validar(){
             var form= document.form;
+            if(form.name.value==0){
+                swal('campo vacio','El campo nombre está vació', 'error')
+                form.username.value="";
+                form.username.focus();
+                return false;
+            }
             if(form.username.value==0){
                 swal('campo vacio','El campo usuario está vació', 'error')
                 form.username.value="";
@@ -41,7 +47,13 @@ require 'servidor.php';
                 form.password2.focus();
                 return false;
             }
-            swal('datos enviados con exito', 'success')
+            if(form.password.value != form.password1.value){
+                swal('campo vacio','Las constraseñas son distintas', 'error')
+                form.password2.value="";
+                form.password2.focus();
+                return false;
+            }
+            swal('Datos enviados con exito', 'success')
             form.submit();
         }            
     </script>
@@ -50,7 +62,10 @@ require 'servidor.php';
 <body>
     <h2>Registrarse</h2>
     <form  method="post" action="register.php" class="login-form" name="form">
-    
+    <div class="input-group">
+            <label>Nombre Com.:</label>
+            <input type="text" name="name" class="input" value="" onload="return validar();">
+        </div>
         <div class="input-group">
             <label>Usuario:</label>
             <input type="text" name="username" class="input" value="" onload="return validar();">

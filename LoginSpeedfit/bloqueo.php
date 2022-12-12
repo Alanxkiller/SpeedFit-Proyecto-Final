@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos/styleBlock.css">
-    <link rel="shortcut icon" href="images/SpeedFit.ico" type="image/x-icon">
+    <link REL="SHORTCUT ICON" HREF="../img/SpeedFit.png">
     <title>Cuenta Bloqueada</title>
 </head>
 <body>

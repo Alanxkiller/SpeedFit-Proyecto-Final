@@ -8,7 +8,7 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <link REL="SHORTCUT ICON" HREF="img/SpeedFit.png">
+    <link REL="SHORTCUT ICON" HREF="../img/SpeedFit.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -54,7 +54,7 @@
                 <a class="nav-link" href="../carrito/categoriaGeneral.php">Productos</a>
               </li>
               <?php }else{ ?>
-                <a class="nav-link" href="#">Inicia Sesión para Comprar</a>
+                <a class="nav-link" href="">Inicia Sesión para Comprar</a>
               <?php } ?>
               <?php if($_SESSION['admin']) { ?>
               <li class="nav-item">
@@ -69,7 +69,6 @@
               if(isset($_SESSION["username"])){?>
                 <?php echo "<span style='color:#eee'>".$_SESSION['username']."</span>"; ?>
                 <a class='nav-link' href='index.php?logout=1' >Log-out</a>
-                <a class="nav-link" href="../carrito/carrito.php">Carrito</a>
               <?php  } else { ?>
                 <a class='nav-link' href='index.php' style='color:white'>Log-in</a>";              
               <?php } ?>

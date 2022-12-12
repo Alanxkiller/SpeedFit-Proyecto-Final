@@ -74,8 +74,6 @@
               if(isset($_SESSION["username"])){?>
                 <a href='LoginSpeedfit/index.php' class="nav-link"><?php echo $_SESSION['username']; ?></a>
                 
-                <a class="nav-link" href="carrito/carrito.php">Carrito</a>
-                
                 <a class='nav-link' href='LoginSpeedfit/index.php?logout=1'>Log-out</a>
               <?php  } else { ?>
                 <a class='nav-link navbar-dark' href='LoginSpeedfit/index.php'>Log-in</a>              

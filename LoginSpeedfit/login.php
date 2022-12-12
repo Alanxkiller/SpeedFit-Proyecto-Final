@@ -15,7 +15,7 @@ $captcha = $_SERVER['captcha'];
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos/styleLogin.css">
     <link rel="stylesheet" href="estilos/responsiveLogin.css">
-	<link rel="shortcut icon" href="images/SpeedFit.ico" type="image/x-icon">
+	<link REL="SHORTCUT ICON" HREF="../img/SpeedFit.png">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">    
         function validar(){
@@ -38,30 +38,6 @@ $captcha = $_SERVER['captcha'];
                 form.respuesta.focus();
                 return false;
             }
-            // if(form.ciudad.value==0){
-            //     swal('campo vacio','El campo ciudad está vació', 'error')
-            //     form.ciudad.value="";
-            //     form.ciudad.focus();
-            //     return false;
-            // }
-            // if(form.pais.value==0){
-            //     swal('campo vacio','El campo país está vació', 'error')
-            //     form.pais.value="";
-            //     form.pais.focus();
-            //     return false;
-            // }
-            // if(form.cp.value==0){
-            //     swal('campo vacio','El campo código postal está vació', 'error')
-            //     form.cp.value="";
-            //     form.cp.focus();
-            //     return false;
-            // }
-            // if(form.tel.value==0){
-            //     swal('campo vacio','El campo telefono está vació', 'error')
-            //     form.tel.value="";
-            //     form.tel.focus();
-            //     return false;
-            // }
             swal('Bienvenido', 'success')
             form.submit();
         }            

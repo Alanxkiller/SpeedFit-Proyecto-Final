@@ -56,16 +56,21 @@
         }
     }
     
-    //si al dejar al carrito vacio no pongo lo de abajo nos mostrara error por eso si 
-    //el carrito esta vacio pondre como null al arrar listacarrito
-?>
 
+    if(isset($_POST['pago'])){
+        $pago=$_POST['pago'];
+    }
+        
+    $numeroRandom2=rand(1000000000,9999999999);
+        
+    ?>
+        <!-- Logica de seleccion del select xd-->
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Carrito</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
     crossorigin="anonymous"></script>
@@ -74,7 +79,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script>
+        $(document).ready(function() {
+            $('#pago1').hide();
+            $('#pago2').hide();
+            $('#myOptions').change(function() {
+            // var displaycourse=$("#myOptions option:selected").text();
+            // var displaycourse2=$("#myOptions").val(); //obtengo el id del producto seleccionado
+            if ($("#myOptions").val() == 1) {
+                        
+                $('#pago2').hide();
+                $('#pago').show();
+    
+            } else if ($("#myOptions").val() == 2) {
+                $('#pago').hide();
+                    $('#pago2').show();
+            }
+            });
+        });
+        //si al dejar al carrito vacio no pongo lo de abajo nos mostrara error por eso si 
+        //el carrito esta vacio pondre como null al arrar listacarrito
+        </script>
 </head>
   <body>
     <div class="container">
@@ -146,6 +171,7 @@
                 <div class="modal-body">
                 <?php if($listaCarrito == null){ ?>
                     <p>El carrito está vacío</p>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Volver</button>
                 <?php } else { ?>
                     
                     <h6>Detalles de el/los Productos:</h6>
@@ -179,7 +205,15 @@
                                 $gastos = 0;
                                 $envio = $conImpuesto;
                             }
+
+                            // variables de sesion
                             $_SESSION['precio'] = $envio;
+                            $_SESSION['cantidadN'] = $_SESSION['totalProductos'];
+                            $_SESSION['subtotalN'] = $total;
+                            $_SESSION['iva'] = $iva;
+                            $_SESSION['subImpuesto'] = $conImpuesto;
+                            $_SESSION['gastosEnv'] = $gastos;
+
                         ?>
                         <p>Impuestos (IVA): $<?php echo $iva; ?></p>
                         <p>Total (Con IVA): $<?php echo $conImpuesto; ?></p>
@@ -189,20 +223,54 @@
                         <input type="submit" class="btn" value="Canjear" name="canjear">
                         </form>
 
-                        <?php if(isset($aceptado)){ ?>
+                        <?php if(isset($aceptado)){ 
+                            $_SESSION['aceptado'] = $aceptado;
+                            ?>
                             <p class="cupon-msg">Cupón Valido. <?php echo $msg ?></p>
                             <p>Precio Nuevo: <?php echo $_SESSION['precio2'] ?></p>
                         <?php } ?>
                     </div>
+                    <select id="myOptions" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='eliminar'>
+                        <option value="1">Pago por tarjeta</option>';
+                        <option value="2">Pago en el OXXO</option>';
+                    </select>
+
+                    <div id="pago" class="card">
+                        <form method="post" action="servidor.php" class="login-form" name="form">
+
+                            <img src="../img/Visa-MasterCard.png" alt="" style="max-width:100%;height:auto;">
+                            <div class="input-group">
+                                <label>Nombre: </label>
+                                <input type="text" name="nombre" class="input" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Numero de tarjeta: </label>
+                                <input type="text" name="numero" class="input" required>
+                            </div>
+                            <input type="hidden" name="modopago" value="Pago por tarjeta">
+                            <input class="btn btn-primary" name="pagotarjeta" type="submit" value="Realizar Pago">
+                        </form>
+
+                    </div>
+                    <div id="pago2" class="card">
+                        <form method="post" action="servidor.php" class="login-form" name="form2">
+                            <img src="../img/OxxoOriginal.png" alt="" style="max-width:60%;height:auto;">
+                            <div class="input-group">
+                                <label>Nombre: </label>
+                                <input type="text" name="nombre" class="input" required>
+                            </div>
+                            <div class="barras">
+                                <img src="../img/codigoB.png" alt="" style="max-width:60%;">
+                                <p><?php echo $numeroRandom2?></p>
+                            </div>
+                            <input type="hidden" name="modopago" value="Pago por OXXO">
+                            <input class="btn btn-primary" name="pagotarjeta" type="submit" value="Continuar">
+                        </form>
+
+
+                    </div>
                     
                 <?php } ?>   
-                </div>
-                <div class="modal-footer">
-                    <?php if($listaCarrito == null){ ?>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Volver</button>
-                    <?php } else { ?>
-                        <a href="envioForm/formEnvio.php" class="btn btn-primary">Continuar</a>
-                    <?php } ?>   
                 </div>
                 </div>
             </div>
