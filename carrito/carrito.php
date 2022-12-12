@@ -8,6 +8,7 @@
     $password='admin';
     $bd='tiendatenis';
     $contador=0;
+    $i=0;
     // Create connection
     $conn = new mysqli($servidor,$cuenta,$password,$bd,$puerto);
     // Check connection
@@ -48,6 +49,7 @@
 
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,31 +61,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
-  <body>
+
+<body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="categoriaGeneral.php">Tenis</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="categoria1.php">Deportivo</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="categoria2.php">Casual</a>
-                </li>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="categoria1.php">Deportivo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categoria2.php">Casual</a>
+                    </li>
 
-                <li id="carritoMostrar" class="nav-item">
-                <a class="nav-link" href="carrito.php"> carrito <span class="badge bg-secondary"><?php echo $_SESSION['totalProductos']; ?></span></a>
-                </li>
-                
-            </ul>
+                    <li id="carritoMostrar" class="nav-item">
+                        <a class="nav-link" href="carrito.php"> carrito <span class="badge bg-secondary"><?php echo $_SESSION['totalProductos']; ?></span></a>
+                    </li>
+
+                </ul>
             </div>
         </div>
     </nav>
-    
+
 
     <div class="container">
         <div class="table-responsive">
@@ -100,52 +103,80 @@
                     <?php if($listaCarrito == null){
                         echo '<tr><td colspan="5" class="text-center">Por el momento el carrito esta vacio</td></tr>';
                     }else{
+                        $nombreN=array();
+                        $precioN=array();
+                        $cantidadN=array(); 
+                        $descuentoN=array();
+                        $subtotalProductoActualN=array();
+                        $totalN=array();
                         $total=0;
                         foreach($listaCarrito as $producto){ 
                             $idProd= $producto['idProd'];
                             $nombre= $producto['nombre'];
+                            $nombreN[$i] = $producto['nombre'];
                             $precio= $producto['precio'];
+                            $precioN[$i] = $producto['precio'];
                             $cantidad= $producto['cantidad'];
+                            $cantidadN[$i] = $producto['cantidad'];
                             $descuento= $producto['descuento'];
+                            $descuentoN[$i] = $producto['descuento']; 
 
                             $subtotalProductoActual=$cantidad * $precio;
+                            $subtotalProductoActualN[$i]=$subtotalProductoActual;
                             $total += $cantidad * $precio;
                             ?>
-                            <tr>
-                                <td><?php echo $nombre; ?></td>
-                                <td>$<?php echo $precio; ?></td>
-                                <td><?php echo $cantidad; ?></td>
-                                <td>$<?php echo $subtotalProductoActual; ?></td>
-                                <td>
-                                    <form method="post" action="recibiendoMetodoPost.php">
-                                            <input type="hidden" name="idProdEliminar" value="<?php echo $idProd; ?>"> 
-                                            <input type="hidden" name="cantidadRestar" value="<?php echo $cantidad; ?>">
-                                            <input  class="btn btn-primary" type="submit" value="Eliminar del carrito">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        <tr>
-                            <td colspan="3"></td>
-                            <td colspan="1"><p class="h3" id="total">TOTAL = </p></td>
-                            <td colspan="1"><p class="h3" id="total">$<?php echo $total; ?></p></td>
-                        </tr>
-                   <?php } ?>
+                    <tr>
+                        <td><?php echo $nombre; ?></td>
+                        <td>$<?php echo $precio; ?></td>
+                        <td><?php echo $cantidad; ?></td>
+                        <td>$<?php echo $subtotalProductoActual; ?></td>
+                        <td>
+                            <form method="post" action="recibiendoMetodoPost.php">
+                                <input type="hidden" name="idProdEliminar" value="<?php echo $idProd; ?>">
+                                <input type="hidden" name="cantidadRestar" value="<?php echo $cantidad; ?>">
+                                <input class="btn btn-primary" type="submit" value="Eliminar del carrito">
+                            </form>
+                        </td>
+                    </tr>
+                    <?php
+                            $i++;
+                        } ?>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="1">
+                            <p class="h3" id="total">TOTAL = </p>
+                        </td>
+                        <td colspan="1">
+                            <p class="h3" id="total">$<?php echo $total; ?></p>
+                        </td>
+                    </tr>
+                    <?php } 
                     
-                        
+                    $_SESSION['nombreN'] = $nombreN;
+                    $_SESSION['precioN'] = $precioN;
+                    $_SESSION['cantidadN'] = $cantidadN;
+                    $_SESSION['descuentoN'] = $descuentoN;
+                    $_SESSION['subtotalProductoActualN'] = $subtotalProductoActualN;
+                    $_SESSION['totalN'] = $total;
+                    ?>
+
+
                 </tbody>
             </table>
         </div>
 
-        <div class="row">
-            <div class="col-md-5 offset-md-7 d-grid gap-2">
-                    <button class="btn btn-primary btn-lg">Realizar Pago</button>
-            </div>
-    </div>
 
-    <script>
+        <form method="post" action="selectCambio.php">
+            <button class="btn btn-primary btn-lg" type="submit" value="Realizar Pago">Realizar Pago</button>
+            
+        </form>
 
-    </script>
+        </div>
+
+        <script>
+
+        </script>
 
 </body>
+
 </html>

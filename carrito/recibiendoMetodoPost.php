@@ -60,4 +60,8 @@
     
 ?>
             <script>window.location.href="categoriaGeneral.php"</script>
+    
+        
+            
+  
 
